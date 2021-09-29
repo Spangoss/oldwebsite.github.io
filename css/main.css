@@ -1,0 +1,54 @@
+:root {
+  --pink: #BF1D90;
+  --pink-dark: #93166F;
+  --pink-light: #E77FC9;
+  --teal: #0F6465;
+  --teal-dark: #0C4E4F;
+  --teal-light: #09B0B2;
+}
+
+/* Custom text colours */
+.text-teal {
+  color: var(--teal);
+}
+
+.text-teal-dark {
+  color: var(--teal-dark);
+}
+
+.text-teal-light {
+  color: var(--teal-light);
+}
+
+/* Custom border colours */
+.border-pink {
+  border-color: var(--pink) !important;
+}
+
+.border-pink-dark {
+  border-color: var(--pink-dark) !important;
+}
+
+.border-pink-light {
+  border-color: var(--pink-light) !important;
+}
+
+.border-teal {
+  border-color: var(--teal) !important;
+}
+
+.border-teal-dark {
+  border-color: var(--teal-dark) !important;
+}
+
+.border-teal-light {
+  border-color: var(--teal-light) !important;
+}
+
+.avatar {
+  height: 10rem;
+}
+
+.headline {
+  height: 4rem;
+}
