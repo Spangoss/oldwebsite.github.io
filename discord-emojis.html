@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#BF1D90">
+  <meta name="msapplication-TileColor" content="#212529">
+  <meta name="theme-color" content="#212529">
+  <title>Spangoss</title>
+
+</head>
+
+<body class="bg-dark text-muted">
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid mx-3">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.svg" alt="logo" height="24" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="stuff.html">Stuff</a>
+            </li>
+            <!--<li class="nav-item">
+                <a class="nav-link" href="#">Things</i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</i></a>
+              </li>-->
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/mook_spangoss/"><i class="fab fa-instagram fa-lg"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.youtube.com/channel/UChkJuhmQBMMHQ-LHgXgEesA"><i class="fab fa-youtube fa-lg"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://untappd.com/user/Spangoss"><i class="fa fa-beer fa-lg"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h3 class="mb-3">
+          <span>&#127465; &#127470; &#127480; &#127464; &#127476; &#127479; &#127465;</span>
+          <span class="mx-3">&#127466; &#127474; &#127476; &#127471; &#127470;</span>
+          <span>&#127468; &#127466; &#127475; &#127466; &#127479; &#127462; &#127481; &#127476; &#127479;</span>
+        </h3>
+        <p>Type a message and press convert to get a string that can be pasted directly into Discord chat that represents your message as emoji letters.</p>
+        <div class="form-floating my-4">
+          <textarea class="form-control" placeholder="Type a message here" id="discordEmojiInput" oninput="checkInput()"></textarea>
+          <label for="discordEmojiInput">Type Message here</label>
+        </div>
+        <button type="button" id="convertEmojis" class="btn btn-teal disabled" onclick="convertEmojis()" data-bs-toggle="modal" data-bs-target="#discordEmojiModal">Convert</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="discordEmojiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="discordEmojiModal">Discord Emojis</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="alert alert-secondary" role="alert">
+                <code id="discordEmojiString"></code>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-sm btn-teal" id="copyEmoji" onclick="copyEmojis()">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="d-flex justify-content-center fixed-bottom">
+    <p><i class="fa fa-code"></i> Code by Spangoss 2021</p>
+  </footer>
+  </div>
+
+
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  <!-- Convert Discord Emojis -->
+  <script src="scripts/convert-discord-emojis.js"></script>
+
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
+
+  <script>
+    window.onload = function() {
+      // Parses the document body and
+      // inserts <img> tags in place of Unicode Emojis
+      twemoji.parse(document.body, {
+          folder: 'svg',
+          ext: '.svg'
+        } // This is to specify to Twemoji to use SVGs and not PNGs
+      );
+
+    }
+  </script>
+
+
+</body>
+
+</html>

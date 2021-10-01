@@ -5,9 +5,83 @@
   --teal: #0F6465;
   --teal-dark: #0C4E4F;
   --teal-light: #09B0B2;
+  --epic: #6f42c1;
+  --rare: #0d6efd;
+  --uncommon: #198754;
+  --common: #6c757d;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+/* Twitter Emoji */
+img.emoji {
+  width: 1.5rem;
+  pointer-events: none;
+}
+
+/* Bootstrap Overrides */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: var(--teal);
+}
+
+.nav-link {
+  color: var(--teal-light);
+}
+
+.nav-link:hover {
+  color: var(--teal);
 }
 
 /* Custom text colours */
+.text-pink {
+  color: var(--pink);
+}
+
+.text-pink-dark {
+  color: var(--pink-dark);
+}
+
+.text-pink-light {
+  color: var(--pink-light);
+}
+
 .text-teal {
   color: var(--teal);
 }
@@ -45,10 +119,121 @@
   border-color: var(--teal-light) !important;
 }
 
+/* Custom button colours */
+.btn-pink {
+  background-color: var(--pink);
+  color: white;
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: var(--pink-dark);
+  border-color: var(--pink-dark);
+}
+
+.btn-check:focus+.btn-pink, .btn-pink:focus {
+  color: #fff;
+  background-color: var(--pink-dark);
+  border-color: var(--pink-dark);
+  box-shadow: 0 0 0 .25rem rgba(147, 22, 111, .5);
+}
+
+.btn-teal {
+  background-color: var(--teal);
+  color: white;
+}
+
+.btn-teal:hover {
+  color: #fff;
+  background-color: var(--teal-dark);
+  border-color: var(--teal-dark);
+}
+
+.btn-check:focus+.btn-teal, .btn-teal:focus {
+  color: #fff;
+  background-color: var(--teal-dark);
+  border-color: var(--teal-dark);
+  box-shadow: 0 0 0 .25rem rgba(12, 78, 79, .5);
+}
+
+/* Index Page */
 .avatar {
   height: 10rem;
 }
 
 .headline {
   height: 4rem;
+}
+
+/* Stuff Page */
+.card.bg-black {
+  border-color: rgba(108, 117, 125, 0.35);
+  box-shadow: 0px 5px 25px 0px rgba(, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.4);
+}
+
+.list-group-item.bg-black {
+  border-color: rgba(108, 117, 125, 0.35);
+}
+
+.card-zoom:hover {
+  border-color: rgba(108, 117, 125, 0.4);
+  box-shadow: 0px 5px 25px 0px rgba(, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.6);
+  transform: scale(1.025);
+  transition: transform 0.6s ease;
+}
+
+/* WoW Professions */
+.form-select {
+  border-color: #373b3e;
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+  //background-color: var(--teal-dark) !important;
+}
+
+/* Wowhead Colors */
+.quality-a335ee a {
+  color: var(--epic) !important;
+}
+
+.quality-a335ee:hover {
+  background-color: var(--epic) !important;
+}
+
+.quality-0070dd a {
+  color: var(--rare) !important;
+}
+
+.quality-0070dd:hover {
+  background-color: var(--rare) !important;
+}
+
+.quality-1eff00 a {
+  color: var(--uncommon) !important;
+}
+
+.quality-1eff00:hover {
+  background-color: var(--uncommon) !important;
+}
+
+.quality-ffffff a {
+  color: var(--common) !important;
+}
+
+.quality-ffffff:hover {
+  background-color: var(--common) !important;
+}
+
+a.wowhead-link {
+  text-decoration: none !important;
+}
+
+a.wowhead-link:hover {
+  color: white !important;
+}
+
+.professions-output {
+  max-height: 30rem;
 }

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" ng-app="tradeSkills" ng-controller="tradeSkillsCntrl">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#BF1D90">
+  <meta name="msapplication-TileColor" content="#212529">
+  <meta name="theme-color" content="#212529">
+  <!-- Angular JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="scripts/trade-skills.js"></script>
+  <title>Spangoss</title>
+
+</head>
+
+<body class="bg-dark text-muted">
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid mx-3">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.svg" alt="logo" height="24" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="stuff.html">Stuff</a>
+            </li>
+            <!--<li class="nav-item">
+                <a class="nav-link" href="#">Things</i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</i></a>
+              </li>-->
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/mook_spangoss/"><i class="fab fa-instagram fa-lg"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.youtube.com/channel/UChkJuhmQBMMHQ-LHgXgEesA"><i class="fab fa-youtube fa-lg"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://untappd.com/user/Spangoss"><i class="fa fa-beer fa-lg"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-light">World of Warcraft Professions</h2>
+        <p>Here are some recipes that I can make in World of Warcraft Classic: The Burning Crusade.</p>
+      </div>
+    </div>
+
+    <!-- Tab Pills -->
+    <div class="row pb-5">
+      <div class="col" role="navigation">
+        <ul class="nav nav-pills nav-fill py-3 px-1">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="enchanting-tab" data-bs-toggle="tab" data-bs-target="#enchanting" role="tab" aria-controls="home" aria-selected="true">Enchanting</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tailoring-tab" data-bs-toggle="tab" data-bs-target="#tailoring" role="tab" aria-controls="tailoring" aria-selected="false">Tailoring</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="import-tab" data-bs-toggle="tab" data-bs-target="#import" role="tab" aria-controls="import" aria-selected="false">Import</a>
+          </li>
+        </ul>
+
+        <!-- Enchanting Tab Content-->
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="enchanting" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card bg-black">
+              <div class="card-body">
+                <!-- Search and Category Controls -->
+                <div class="row">
+                  <div class="col-6">
+                    <input class="form-control" id="searchEnchantingText" placeholder="Search..." ng-model="enchantingSearchText">
+                  </div>
+                  <div class="col-6">
+                    <select ng-model="enchantingCategorySelect" class="form-select bg-dark text-muted" aria-label="Enchanting category select">
+                      <option selected value="{{$scope.enchantingCategoriesStored}}">Select Category</option>
+                      <option ng-repeat="cat in enchantingCategoriesStored" value="{{cat}}">{{cat}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- Results -->
+              <ul class="list-group list-group-flush">
+                <li ng-repeat="skill in enchantingSkillsStored | filter: {category: enchantingCategorySelect, name: enchantingSearchText}" class="list-group-item list-group-item-action bg-black quality-ffffff"><a href="https://tbc.wowhead.com/spell/{{skill.id}}"
+                    class="wowhead-link stretched-link">{{skill.name}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Tailoring Tab Content-->
+          <div class="tab-pane fade" id="tailoring" role="tabpanel" aria-labelledby="enchanting-tab">
+            <div class="card bg-black">
+              <div class="card-body">
+                <!-- Search and Category Controls -->
+                <div class="row">
+                  <div class="col-6">
+                    <input class="form-control" id="tailoringSearchText" placeholder="Search..." ng-model="tailoringSearchText">
+                  </div>
+                  <div class="col-6">
+                    <select ng-model="tailoringCategorySelect" class="form-select bg-dark text-muted" aria-label="Tailoring Category select">
+                      <option selected value>Select Category</option>
+                      <option ng-repeat="skill in tailoringSkillsStored | unique: 'categorie'" value="{{skill.categorie}}">{{skill.categorie}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- Results -->
+              <ul class="list-group list-group-flush">
+                <li ng-repeat="skill in tailoringSkillsStored | filter: {categorie: tailoringCategorySelect, name: tailoringSearchText}" class="list-group-item list-group-item-action bg-black ng-class: quality-{{skill.color}}"><a href="https://tbc.wowhead.com/item/{{skill.id}}"
+                    class="wowhead-link stretched-link">{{skill.name}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Enchanting Tab Content-->
+          <div class="tab-pane fade" id="import" role="tabpanel" aria-labelledby="enchanting-tab">
+            <!-- Input Box -->
+            <div class="row my-4">
+              <div class="col">
+                <h5 class="text-light">TradeSkillExporter Parsing Tool</h5>
+                <p>This is used to parse the output from <a href="https://www.curseforge.com/wow/addons/tradeskillexporter">TradeSkillExporter</a> to build an array of objects containing the skill and it's category</p>
+                <div class="form-floating">
+                  <textarea ng-model="tradeSkillsInput" class="form-control" placeholder="Paste Trade Skills string here" id="tradeSkillsInput" style="height: 10rem"></textarea>
+                  <label for="floatingTextarea2">Trade Skills Input</label>
+                </div>
+                <button ng-click="submitSkills()" data-bs-toggle="modal" data-bs-target="#wowProfessionModal" class="btn btn-teal my-3">Submit</button>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="wowProfessionModal" tabindex="-1" aria-labelledby="wowProfessionModal" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="wowProfessionModal">World of Warcraft Prossesions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <h6>Profession Categories</h6>
+                    <div class="alert alert-secondary" role="alert">
+                      <code id="wowProfessionCategories"></code>
+                    </div>
+                    <h6>Profession Skills</h6>
+                    <div class="alert alert-secondary overflow-auto professions-output" role="alert">
+                      <code id="wowProfessions"></code>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-teal" id="copySkills" ng-click="copyWowTradeSkills('wowProfessionCategories')">Copy Categories</button>
+                    <button type="button" class="btn btn-sm btn-teal" id="copySkills" ng-click="copyWowTradeSkills('wowProfessions')">Copy Skills</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="d-flex justify-content-center">
+    <p><i class="fa fa-code"></i> Code by Spangoss 2021</p>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  <!--Wowhead Popups -->
+  <script>
+    const whTooltips = {
+      colorLinks: false,
+      iconizeLinks: false,
+      renameLinks: true
+    };
+  </script>
+
+  <script src="https://wow.zamimg.com/widgets/power.js"></script>
+
+  <!-- Convert Tradeskills -->
+  <script src="scripts/convert-trade-skills.js"></script>
+
+
+
+</body>
+
+</html>
