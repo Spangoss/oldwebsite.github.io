@@ -9,6 +9,8 @@
   --rare: #0d6efd;
   --uncommon: #198754;
   --common: #6c757d;
+  --text-muted: #6c757d;
+  --text-light: #f8f9fa;
 }
 
 html {
@@ -56,17 +58,26 @@ img.emoji {
   box-shadow: none;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color: #fff;
-  background-color: var(--teal);
+.nav-tabs {
+  border-color: rgba(108, 117, 125, 0.4);
+}
+
+.nav-tabs .active {
+  background-color: transparent !important;
+  border-bottom: solid 2px var(--teal-light) !important;
 }
 
 .nav-link {
-  color: var(--teal-light);
+  color: var(--text-muted);
+  border: none !important;
 }
 
 .nav-link:hover {
-  color: var(--teal);
+  color: var(--text-light);
+}
+
+.nav-link.active {
+  color: var(--teal-light) !important;
 }
 
 /* Custom text colours */
