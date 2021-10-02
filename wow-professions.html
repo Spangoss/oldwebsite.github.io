@@ -116,7 +116,7 @@
               <!-- Results -->
               <ul class="list-group list-group-flush">
                 <li ng-repeat="skill in enchantingSkillsStored | filter: {category: enchantingCategorySelect, name: enchantingSearchText}" class="list-group-item list-group-item-action bg-black quality-ffffff"><a href="https://tbc.wowhead.com/spell/{{skill.id}}"
-                    class="wowhead-link stretched-link">{{skill.name}}</a>
+                    target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
                 </li>
               </ul>
             </div>
@@ -142,7 +142,7 @@
               <!-- Results -->
               <ul class="list-group list-group-flush">
                 <li ng-repeat="skill in tailoringSkillsStored | filter: {categorie: tailoringCategorySelect, name: tailoringSearchText}" class="list-group-item list-group-item-action bg-black ng-class: quality-{{skill.color}}"><a href="https://tbc.wowhead.com/item/{{skill.id}}"
-                    class="wowhead-link stretched-link">{{skill.name}}</a>
+                    target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
                 </li>
               </ul>
             </div>
@@ -155,9 +155,10 @@
               <div class="col">
                 <h5 class="text-light">TradeSkillExporter Parsing Tool</h5>
                 <p>Currently there are two addons that can be used to export profession skills from World of Warcraft Classic. </p>
-                <p><a href="https://www.curseforge.com/wow/addons/professions-exporter">Professions exporter</a> exports trade skills as an array of objects, but it currently does not contain any categories for enchanting formulas.</p>
+                <p><a href="https://www.curseforge.com/wow/addons/professions-exporter" target="_blank">Professions exporter</a> exports trade skills as an array of objects, but it currently does not contain any categories for enchanting formulas.</p>
 
-                <p><a href="https://www.curseforge.com/wow/addons/tradeskillexporter">TradeSkillExporter</a> exports data as a simple list. This import tool can be used to parse the output from TradeSkillExporter to build an array of objects
+                <p><a href="https://www.curseforge.com/wow/addons/tradeskillexporter" target="_blank">TradeSkillExporter</a> exports data as a simple list. This import tool can be used to parse the output from TradeSkillExporter to build an array of
+                  objects
                   containing the skill and it's category.</p>
 
                 <div class="form-floating">
