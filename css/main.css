@@ -77,7 +77,7 @@ img.emoji {
 }
 
 .nav-link.active {
-  color: var(--teal-light) !important;
+  color: var(--text-light) !important;
 }
 
 /* Custom text colours */
