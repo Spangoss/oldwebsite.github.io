@@ -1,7 +1,7 @@
 :root {
   --pink: #BF1D90;
   --pink-dark: #93166F;
-  --pink-light: #E77FC9;
+  --pink-light: #E65CBE;
   --teal: #0F6465;
   --teal-dark: #0C4E4F;
   --teal-light: #09B0B2;
@@ -11,6 +11,7 @@
   --common: #6c757d;
   --text-muted: #6c757d;
   --text-light: #f8f9fa;
+  --dark: #212529;
 }
 
 html {
@@ -149,6 +150,24 @@ img.emoji {
   box-shadow: 0 0 0 .25rem rgba(147, 22, 111, .5);
 }
 
+.btn-pink-light {
+  background-color: var(--pink-light);
+  color: var(--dark);
+}
+
+.btn-pink-light:hover {
+  color: var(--dark);
+  background-color: var(--pink);
+  border-color: var(--pink);
+}
+
+.btn-check:focus+.btn-pink-light, .btn-pink-light:focus {
+  color: #fff;
+  background-color: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 0 .25rem rgba(12, 78, 79, .5);
+}
+
 .btn-teal {
   background-color: var(--teal);
   color: white;
@@ -164,6 +183,24 @@ img.emoji {
   color: #fff;
   background-color: var(--teal-dark);
   border-color: var(--teal-dark);
+  box-shadow: 0 0 0 .25rem rgba(12, 78, 79, .5);
+}
+
+.btn-teal-light {
+  background-color: var(--teal-light);
+  color: var(--dark);
+}
+
+.btn-teal-light:hover {
+  color: var(--dark);
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+
+.btn-check:focus+.btn-teal-light, .btn-teal-light:focus {
+  color: #fff;
+  background-color: var(--teal);
+  border-color: var(--teal);
   box-shadow: 0 0 0 .25rem rgba(12, 78, 79, .5);
 }
 
@@ -247,4 +284,22 @@ a.wowhead-link:hover {
 
 .professions-output {
   max-height: 30rem;
+}
+
+/* Cartwall Page */
+.cartwall-audio-play {
+  // background-color: var(--pink) !important;
+}
+
+.cartwall-audio-paused {
+  //background-color: var(--teal) !important;
+}
+
+.playback-btn {
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
 }
