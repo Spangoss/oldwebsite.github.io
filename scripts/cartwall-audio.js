@@ -35,6 +35,7 @@ function resetAudio(id, color) {
 
 // Reset styles once clip has finished
 function audioEnded(id, color) {
+	var audio = document.getElementById(id);
 	var cartwallBtn = document.getElementById(id + '-btn');
 	var playBackBtn = document.getElementById(id + '-PlaybackState');
 	var text = document.getElementById(id + '-text');
@@ -42,4 +43,6 @@ function audioEnded(id, color) {
 	cartwallBtn.classList.remove('btn-success');
 	playBackBtn.classList.remove('fa-pause');
 	text.classList.remove('invisible');
+	audio.currentTime = 0;
+	document.activeElement.blur();
 }
