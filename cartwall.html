@@ -228,10 +228,10 @@
           </button>
         </div>
         <div class="col-6 col-sm-3 d-grid mb-4">
-          <button id="onions-btn" class="btn btn-pink-light position-relative py-3" onclick="playAudio('onions')" oncontextmenu="resetAudio('onions');return false;">
+          <button id="onions-btn" class="btn btn-pink-light position-relative py-3" onclick="playAudio('onions', 'pink-light')" oncontextmenu="resetAudio('onions', 'pink-light');return false;">
             <h5 id="onions-text">Onions</h5>
             <h1 class="playback-btn display-6"><i id="onions-PlaybackState" class="fa"></i></h1>
-            <audio id="onions" onended="audioEnded('onions')">
+            <audio id="onions" onended="audioEnded('onions', 'pink-light')">
               <source src="audio/onions.mp3" type="audio/mpeg">
             </audio>
           </button>
