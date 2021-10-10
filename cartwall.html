@@ -150,7 +150,7 @@
           <button id="fish-btn" class="btn btn-pink position-relative py-3" onclick="playAudio('fish'), 'pink'" oncontextmenu="resetAudio('fish', 'pink');return false;">
             <h5 id="fish-text">Fish</h5>
             <h1 class="playback-btn display-6"><i id="fish-PlaybackState" class="fa"></i></h1>
-            <audio id="fish" onended="audioEnded('fish'), 'pink'">
+            <audio id="fish" onended="audioEnded('fish', 'pink')">
               <source src="audio/fish.mp3" type="audio/mpeg">
             </audio>
           </button>
