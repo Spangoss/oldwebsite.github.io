@@ -236,6 +236,10 @@ app.controller('tradeSkillsCntrl', function ($scope) {
 		"id": "13836",
 		"category": "Enchant Boots"
 	}, {
+		"name": "Enchant Boots - Vitality",
+		"id": "27948",
+		"category": "Enchant Boots"
+	}, {
 		"name": "Enchant Bracer - Assault",
 		"id": "34002",
 		"category": "Enchant Bracer"
@@ -322,6 +326,10 @@ app.controller('tradeSkillsCntrl', function ($scope) {
 	}, {
 		"name": "Enchant Bracer - Minor Strength",
 		"id": "7782",
+		"category": "Enchant Bracer"
+	}, {
+		"name": "Enchant Bracer - Restore Mana Prime",
+		"id": "27913",
 		"category": "Enchant Bracer"
 	}, {
 		"name": "Enchant Bracer - Spirit",
