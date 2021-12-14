@@ -133,7 +133,7 @@
             </div>
             <!-- Results -->
             <ul class="list-group list-group-flush">
-              <li ng-repeat="skill in tailoringSkillsStored | filter: {categorie: tailoringCategorySelect, name: tailoringSearchText}" class="list-group-item list-group-item-action bg-black ng-class: quality-{{skill.color}}"><a href="https://tbc.wowhead.com/item/{{skill.id}}"
+              <li ng-repeat="skill in tailoringSkillsStored | filter: {categorie: tailoringCategorySelect, name: tailoringSearchText}" class="list-group-item list-group-item-action bg-black ng-class: quality-{{skill.color}}"><a href="https://tbc.wowhead.com/item={{skill.id}}"
                   target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
               </li>
             </ul>
