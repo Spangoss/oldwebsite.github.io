@@ -107,7 +107,7 @@
             </div>
             <!-- Results -->
             <ul class="list-group list-group-flush">
-              <li ng-repeat="skill in enchantingSkillsStored | filter: {category: enchantingCategorySelect, name: enchantingSearchText}" class="list-group-item list-group-item-action bg-black quality-ffffff"><a href="https://tbc.wowhead.com/spell/{{skill.id}}"
+              <li ng-repeat="skill in enchantingSkillsStored | filter: {category: enchantingCategorySelect, name: enchantingSearchText}" class="list-group-item list-group-item-action bg-black quality-ffffff"><a href="https://tbc.wowhead.com/spell={{skill.id}}"
                   target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
               </li>
             </ul>
