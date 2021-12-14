@@ -112,6 +112,10 @@ app.controller('tradeSkillsCntrl', function ($scope) {
 		"id": "27960",
 		"category": "Enchant Chest"
 	}, {
+		"name": "Enchant Chest - Major Resilience",
+		"id": "33992",
+		"category": "Enchant Chest"
+	}, {
 		"name": "Enchant Gloves - Major Healing",
 		"id": "33999",
 		"category": "Enchant Gloves"
@@ -119,6 +123,10 @@ app.controller('tradeSkillsCntrl', function ($scope) {
 		"name": "Enchant Gloves - Major Strength",
 		"id": "33995",
 		"category": "Enchant Gloves"
+	}, {
+		"name": "Enchant Shield - Shield Block",
+		"id": "27946",
+		"category": "Enchant Shield"
 	}, {
 		"name": "Enchant Weapon - Major Healing",
 		"id": "34010",
@@ -852,8 +860,6 @@ app.controller('tradeSkillsCntrl', function ($scope) {
 		"id": "25128",
 		"category": "Miscelaneous"
 	}];
-
-
 
 	// Tailoring Skills
 	$scope.tailoringSkillsStored = [{
