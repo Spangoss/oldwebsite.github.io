@@ -306,3 +306,20 @@ a.wowhead-link:hover {
   transform: translate(-50%, -50%);
   opacity: 0.5;
 }
+
+/* Spangoss Page */
+.text-purple {
+  color: #6f42c1;
+}
+
+.game-icon {
+  height: 4.5rem;
+  width: 4.5rem;
+  background-color: black;
+  border: 1px solid var(--epic);
+}
+
+.stat-icon {
+  text-align: center;
+  min-width: 3rem;
+}
