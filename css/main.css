@@ -24,14 +24,6 @@ body {
   margin-bottom: 60px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-}
-
 a {
   text-decoration: none;
 }
@@ -40,8 +32,11 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
+}
+
+.full-screen-footer {
+  bottom: 60px;
 }
 
 /* Twitter Emoji */
@@ -249,7 +244,7 @@ img.emoji {
   color: var(--epic) !important;
 }
 
-.quality-a335ee:hover {
+.list-group-item-action.quality-a335ee:hover  {
   background-color: var(--epic) !important;
 }
 
@@ -257,7 +252,7 @@ img.emoji {
   color: var(--rare) !important;
 }
 
-.quality-0070dd:hover {
+.list-group-item-action..quality-0070dd:hover {
   background-color: var(--rare) !important;
 }
 
@@ -265,7 +260,7 @@ img.emoji {
   color: var(--uncommon) !important;
 }
 
-.quality-1eff00:hover {
+.list-group-item-action..quality-1eff00:hover {
   background-color: var(--uncommon) !important;
 }
 
@@ -273,7 +268,7 @@ img.emoji {
   color: var(--common) !important;
 }
 
-.quality-ffffff:hover {
+.list-group-item-action..quality-ffffff:hover {
   background-color: var(--common) !important;
 }
 
@@ -307,19 +302,99 @@ a.wowhead-link:hover {
   opacity: 0.5;
 }
 
-/* Spangoss Page */
+/* Spangoss Armory Page */
+.wow-bg:before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/background.png');
+  background-size: cover;
+  background-position: center;
+  filter: opacity(0.6) grayscale(50%);
+}
+
+.vignette-radial:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: radial-gradient(circle, transparent 50%, black 100%);
+
+}
+
 .text-purple {
   color: #6f42c1;
 }
 
 .game-icon {
-  height: 4.5rem;
-  width: 4.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   background-color: black;
+  background-size: cover;
   border: 1px solid var(--epic);
+}
+
+.item-slot:hover img {
+  box-shadow:  0 0 1rem 0 var(--epic) !important;
 }
 
 .stat-icon {
   text-align: center;
   min-width: 3rem;
+}
+
+.item-level {
+  color: var(--teal-light);
+  display: none;
+}
+
+.enchantment {
+  color: #1eff00;
+}
+
+.gem-container {
+  margin: 0 1rem;
+}
+
+.gem {
+  display: inline-block;
+  vertical-align: middle !important;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-size: cover;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 20%;
+}
+
+.blue-socket {
+  border-color: var(--bs-primary) !important;
+}
+
+.red-socket {
+  border-color: var(--bs-danger) !important;
+}
+
+.yellow-socket {
+  border-color: var(--bs-warning) !important;
+}
+
+.meta-gem {
+  background-image: url(https://wow.zamimg.com/images/wow/icons/large/inv_misc_gem_diamond_07.jpg);
+  border color: white;
+}
+
+.red-gem {
+  background-image: url(https://wow.zamimg.com/images/wow/icons/large/inv_jewelcrafting_crimsonspinel_02.jpg);
+}
+
+.blue-gem {
+  background-image: url(https://wow.zamimg.com/images/wow/icons/large/inv_jewelcrafting_shadowsongamethyst_02.jpg);
+}
+
+.text-common {
+  color: var(--uncommon);
 }

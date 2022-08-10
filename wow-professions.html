@@ -5,7 +5,6 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <!-- Font Awesome CSS -->
@@ -15,16 +14,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
   <link rel="icon" type="image/png" href="images/favicon/favicon.png">
-
   <!-- Angular JavaScript -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-
   <title>Spangoss</title>
-
 </head>
 
 <body class="bg-dark text-muted mx-3">
-
   <!-- Navigation -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,14 +60,12 @@
       </div>
     </nav>
   </header>
-
   <!-- Content -->
   <div class="container my-5">
     <div class="row">
       <h3 class="text-light">World of Warcraft Professions</h3>
       <p>Here are some recipes that I can make in World of Warcraft Classic: The Burning Crusade.</p>
     </div>
-
     <!-- Tabs -->
     <div class="row pb-5">
       <ul class="nav nav-tabs mb-4 nav-fill" role="navigation">
@@ -86,7 +79,6 @@
           <a class="nav-link" id="import-tab" data-bs-toggle="tab" data-bs-target="#import" role="tab" aria-controls="import" aria-selected="false">Import</a>
         </li>
       </ul>
-
       <!-- Enchanting Tab Content-->
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="enchanting" role="tabpanel" aria-labelledby="home-tab">
@@ -107,13 +99,12 @@
             </div>
             <!-- Results -->
             <ul class="list-group list-group-flush">
-              <li ng-repeat="skill in enchantingSkillsStored | filter: {category: enchantingCategorySelect, name: enchantingSearchText}" class="list-group-item list-group-item-action bg-black quality-ffffff"><a href="https://tbc.wowhead.com/spell={{skill.id}}"
-                  target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
+              <li ng-repeat="skill in enchantingSkillsStored | filter: {category: enchantingCategorySelect, name: enchantingSearchText}" class="list-group-item list-group-item-action bg-black quality-ffffff"><a
+                  href="https://tbc.wowhead.com/spell={{skill.id}}" target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
               </li>
             </ul>
           </div>
         </div>
-
         <!-- Tailoring Tab Content-->
         <div class="tab-pane fade" id="tailoring" role="tabpanel" aria-labelledby="enchanting-tab">
           <div class="card bg-black">
@@ -133,28 +124,21 @@
             </div>
             <!-- Results -->
             <ul class="list-group list-group-flush">
-              <li ng-repeat="skill in tailoringSkillsStored | filter: {categorie: tailoringCategorySelect, name: tailoringSearchText}" class="list-group-item list-group-item-action bg-black ng-class: quality-{{skill.color}}"><a href="https://tbc.wowhead.com/item={{skill.id}}"
-                  target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
+              <li ng-repeat="skill in tailoringSkillsStored | filter: {categorie: tailoringCategorySelect, name: tailoringSearchText}" class="list-group-item list-group-item-action bg-black ng-class: quality-{{skill.color}}"><a
+                  href="https://tbc.wowhead.com/item={{skill.id}}" target="_blank" class="wowhead-link stretched-link">{{skill.name}}</a>
               </li>
             </ul>
           </div>
         </div>
-
         <!-- Import Tab Content-->
         <div class="tab-pane fade" id="import" role="tabpanel" aria-labelledby="enchanting-tab">
-
           <div class="row my-4">
             <div class="col">
-
               <h5 class="text-light">TradeSkillExporter Parsing Tool</h5>
               <p>Currently there are two addons that can be used to export profession skills from World of Warcraft Classic. </p>
-              <p><a href="https://www.curseforge.com/wow/addons/professions-exporter" target="_blank">Professions exporter</a> exports trade skills as an array of objects, but it currently does not contain any categories for enchanting
-                formulas.</p>
-
-              <p><a href="https://www.curseforge.com/wow/addons/tradeskillexporter" target="_blank">TradeSkillExporter</a> exports data as a simple list. This import tool can be used to parse the output from TradeSkillExporter to build an
-                array of
-                objects
-                containing the skill and it's category.</p>
+              <p><a href="https://www.curseforge.com/wow/addons/professions-exporter" target="_blank">Professions exporter</a> exports trade skills as an array of objects, but it currently does not contain any categories for enchanting formulas.</p>
+              <p><a href="https://www.curseforge.com/wow/addons/tradeskillexporter" target="_blank">TradeSkillExporter</a> exports data as a simple list. This import tool can be used to parse the output from TradeSkillExporter to build an array of
+                objects containing the skill and it's category.</p>
               <!-- Input Box -->
               <div class="form-floating">
                 <textarea ng-model="tradeSkillsInput" class="form-control" placeholder="Paste Trade Skills string here" id="tradeSkillsInput" style="height: 10rem"></textarea>
@@ -167,7 +151,6 @@
       </div>
     </div>
   </div>
-
   <!-- Modal -->
   <div class="modal fade" id="wowProfessionModal" tabindex="-1" aria-labelledby="wowProfessionModal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -189,15 +172,12 @@
       </div>
     </div>
   </div>
-
   <!-- Footer -->
   <footer class="text-center">
     <p><i class="fa fa-code"></i> Code by Spangoss 2021</p>
   </footer>
-
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
   <!--Wowhead Popups -->
   <script>
     const whTooltips = {
@@ -206,12 +186,9 @@
       renameLinks: true
     };
   </script>
-
   <script src="https://wow.zamimg.com/widgets/power.js"></script>
-
   <!-- Convert Tradeskills -->
   <script src="scripts/trade-skills.js"></script>
-
 </body>
 
 </html>
